@@ -195,7 +195,7 @@ static void release_cmd_latch(void) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-  if (cmd_latched && record->event.pressed && (keycode != CMD_TAB || keycode != CMD_BACKTICK)) {
+  if (cmd_latched && record->event.pressed && (keycode != KC_F23 || keycode != KC_F24)) {
     release_cmd_latch();
   }
 
