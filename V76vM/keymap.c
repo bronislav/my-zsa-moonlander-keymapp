@@ -189,7 +189,7 @@ static uint16_t cmd_timer = 0;
 
 static void release_cmd_latch(void) {
   if (cmd_latched) {
-    unregister_code(KC_LGUI);
+    unregister_mods(MOD_LGUI);
     cmd_latched = false;
   }
 }
@@ -227,7 +227,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case KC_F23:
         if (record->event.pressed) {
             if (!cmd_latched) {
-              register_code(KC_LGUI);
+              register_mods(MOD_LGUI);
               cmd_latched = true;
           }
           tap_code(KC_GRV);
@@ -238,7 +238,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case KC_F24:
         if (record->event.pressed) {
           if (!cmd_latched) {
-            register_code(KC_LGUI);
+            register_mods(MOD_LGUI);
             cmd_latched = true;
           }
           tap_code(KC_TAB);
