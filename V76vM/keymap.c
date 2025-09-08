@@ -5,10 +5,15 @@
 #ifndef ZSA_SAFE_RANGE
 #define ZSA_SAFE_RANGE SAFE_RANGE
 #endif
+#define CMD_LATCH_TIMEOUT 800
 
 enum custom_keycodes {
   RGB_SLD = ZSA_SAFE_RANGE,
   MAC_LOCK,
+
+  // custom keycodes
+  CMD_TAB = SAFE_RANGE,
+  CMD_BACKTICK = SAFE_RANGE+1,
 };
 
 
@@ -205,6 +210,18 @@ enum {
 
 static tap dance_state[2];
 
+
+static bool cmd_latched = false;
+static uint16_t cmd_timer = 0;
+
+static void release_cmd_latch(void) {
+  if (cmd_latched) {
+    unregister_code(KC_LGUI);
+    cmd_latched = false;
+  }
+}
+
+
 uint8_t dance_step(tap_dance_state_t *state);
 
 uint8_t dance_step(tap_dance_state_t *state) {
@@ -295,6 +312,10 @@ tap_dance_action_t tap_dance_actions[] = {
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  if (cmd_latched && record->event.pressed && (keycode != CMD_TAB || keycode != CMD_BACKTICK)) {
+    release_cmd_latch();
+  }
+
   switch (keycode) {
     case MAC_LOCK:
       HCS(0x19E);
@@ -307,7 +328,38 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             rgblight_mode(1);
         }
         return false;
+
+    case CMD_TAB:
+        if (record->event.pressed) {
+          if (!cmd_latched) {
+            register_code(KC_LGUI);
+            cmd_latched = true;
+          }
+          tap_code(KC_TAB);
+          cmd_timer = timer_read();
+        }
+        return false;
+    }
+
+    case CMD_BACKTICK:
+        if (record->event.pressed) {
+            if (!cmd_latched) {
+              register_code(KC_LGUI);
+              cmd_latched = true;
+          }
+          tap_code(KC_GRV);
+          cmd_timer = timer_read();
+        }
+        return false;
   }
   return true;
 }
 
+void matrix_scan_user(void) {
+  if (cmd_latched && timer_elapsed(cmd_timer) > CMD_LATCH_TIMEOUT) {
+    release_cmd_latch();
+  }
+}
+
+void suspend_power_down_user(void) { release_cmd_latch(); }
+void shutdown_user(void)            { release_cmd_latch(); }
