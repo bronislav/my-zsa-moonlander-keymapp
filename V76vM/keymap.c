@@ -261,4 +261,6 @@ void suspend_power_down_user(void) {
 
 bool shutdown_user(bool jump_to_bootloader) {
   release_cmd_latch();
+
+  return true;
 }
