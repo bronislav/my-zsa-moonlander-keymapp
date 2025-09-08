@@ -5,7 +5,7 @@
 #ifndef ZSA_SAFE_RANGE
 #define ZSA_SAFE_RANGE SAFE_RANGE
 #endif
-#define CMD_LATCH_TIMEOUT 800
+#define CMD_LATCH_TIMEOUT 1500
 
 enum custom_keycodes {
   RGB_SLD = ZSA_SAFE_RANGE,
