@@ -245,6 +245,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           cmd_timer = timer_read();
         }
         return false;
+
+    case KC_TAB:
+      if (record->event.pressed) {
+        if (cmd_latched) {
+          cmd_timer = timer_read();
+        }
+      }
+      return true;
+
+    case KC_GRV:
+      if (record->event.pressed) {
+        if (cmd_latched) {
+          cmd_timer = timer_read();
+        }
+      }
+      return true;
   }
   return true;
 }
