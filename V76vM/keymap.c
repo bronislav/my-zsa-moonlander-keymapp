@@ -10,10 +10,6 @@
 enum custom_keycodes {
   RGB_SLD = ZSA_SAFE_RANGE,
   MAC_LOCK,
-
-  // custom keycodes
-  CMD_TAB = SAFE_RANGE,
-  CMD_BACKTICK = SAFE_RANGE+1,
 };
 
 
@@ -216,25 +212,36 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
         return false;
 
-    case CMD_TAB:
+    case KC_F22:
         if (record->event.pressed) {
-          if (!cmd_latched) {
-            register_code(KC_LGUI);
-            cmd_latched = true;
+          tap_code16(G(KC_SPC));
+
+          if (layer_state_is(0)) {
+            layer_move(1);
+          } else {
+            layer_move(0);
           }
-          tap_code(KC_TAB);
-          cmd_timer = timer_read();
         }
         return false;
-    }
 
-    case CMD_BACKTICK:
+    case KC_F23:
         if (record->event.pressed) {
             if (!cmd_latched) {
               register_code(KC_LGUI);
               cmd_latched = true;
           }
           tap_code(KC_GRV);
+          cmd_timer = timer_read();
+        }
+        return false;
+
+    case KC_F24:
+        if (record->event.pressed) {
+          if (!cmd_latched) {
+            register_code(KC_LGUI);
+            cmd_latched = true;
+          }
+          tap_code(KC_TAB);
           cmd_timer = timer_read();
         }
         return false;
