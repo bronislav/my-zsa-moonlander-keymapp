@@ -214,11 +214,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     case KC_F22:
         if (record->event.pressed) {
-          tap_code16(G(KC_SPC));
-
           if (layer_state_is(0)) {
+            tap_code16(LGUI(LSFT(KC_2)));
             layer_move(1);
           } else {
+            tap_code16(LGUI(LSFT(KC_1)));
             layer_move(0);
           }
         }
