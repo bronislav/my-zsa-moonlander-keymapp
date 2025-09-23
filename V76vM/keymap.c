@@ -22,7 +22,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LEFT_CTRL,   MT(MOD_LGUI, KC_A),MT(MOD_LALT, KC_R),MT(MOD_LCTL, KC_S),MT(MOD_LSFT, KC_T),KC_G,           KC_GRAVE,                                                                       KC_TRANSPARENT, KC_M,           MT(MOD_RSFT, KC_N),MT(MOD_RCTL, KC_E),MT(MOD_LALT, KC_I),MT(MOD_LGUI, KC_O),KC_UNDS,        
     KC_LEFT_SHIFT,  KC_Z,           KC_X,           KC_C,           KC_D,           KC_V,                                           KC_K,           KC_H,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_RIGHT_SHIFT, 
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_LEFT_SHIFT,  CW_TOGG,        KC_TRANSPARENT,                                                                                                 MO(6),          CW_TOGG,        KC_RIGHT_SHIFT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    LT(2, KC_SPACE),LT(4, KC_ENTER),KC_TRANSPARENT,                 KC_TRANSPARENT, KC_ENTER,       LT(3, KC_SPACE)
+    LT(2, KC_SPACE),LT(4, KC_BSPC), KC_TRANSPARENT,                 KC_TRANSPARENT, KC_ENTER,       KC_TAB
   ),
   [1] = LAYOUT_moonlander(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
@@ -83,7 +83,7 @@ const uint16_t PROGMEM combo4[] = { MT(MOD_RSFT, KC_LEFT), MT(MOD_RCTL, KC_DOWN)
 const uint16_t PROGMEM combo5[] = { MT(MOD_RCTL, KC_DOWN), MT(MOD_RALT, KC_RIGHT), COMBO_END};
 const uint16_t PROGMEM combo6[] = { KC_F7, KC_F8, COMBO_END};
 const uint16_t PROGMEM combo7[] = { KC_F6, KC_F7, COMBO_END};
-const uint16_t PROGMEM combo8[] = { LT(4, KC_ENTER), KC_ENTER, COMBO_END};
+const uint16_t PROGMEM combo8[] = { LT(4, KC_BSPC), KC_ENTER, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, KC_PAGE_UP),
