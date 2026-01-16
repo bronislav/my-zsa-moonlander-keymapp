@@ -20,8 +20,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRANSPARENT, KC_Q,           KC_W,           KC_F,           KC_P,           KC_B,           KC_TAB,                                         KC_TRANSPARENT, KC_J,           KC_L,           KC_U,           KC_Y,           KC_SCLN,        KC_MINUS,       
     KC_LEFT_CTRL,   MT(MOD_LGUI, KC_A),MT(MOD_LALT, KC_R),MT(MOD_LCTL, KC_S),MT(MOD_LSFT, KC_T),KC_G,           KC_GRAVE,                                                                       KC_TRANSPARENT, KC_M,           MT(MOD_RSFT, KC_N),MT(MOD_RCTL, KC_E),MT(MOD_LALT, KC_I),MT(MOD_LGUI, KC_O),KC_UNDS,        
     KC_LEFT_SHIFT,  KC_Z,           KC_X,           KC_C,           KC_D,           KC_V,                                           KC_K,           KC_H,           KC_COMMA,       KC_DOT,         KC_SLASH,       KC_RIGHT_SHIFT, 
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_LEFT_SHIFT,  CW_TOGG,        KC_TRANSPARENT,                                                                                                 MO(6),          CW_TOGG,        KC_RIGHT_SHIFT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
-    LT(2, KC_SPACE),LT(4, KC_BSPC), KC_TRANSPARENT,                 KC_TRANSPARENT, KC_ENTER,       KC_TAB
+    MO(4),          KC_TRANSPARENT, KC_TRANSPARENT, KC_LEFT_SHIFT,  CW_TOGG,        KC_TRANSPARENT,                                                                                                 MO(6),          CW_TOGG,        KC_RIGHT_SHIFT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
+    LT(2, KC_SPACE),KC_TRANSPARENT, KC_TRANSPARENT,                 KC_TRANSPARENT, KC_ENTER,       KC_TAB
   ),
   [1] = LAYOUT_moonlander(
     KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, 
@@ -74,22 +74,50 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 
-const uint16_t PROGMEM combo0[] = { LT(4, KC_BSPC), KC_ENTER, COMBO_END};
-const uint16_t PROGMEM combo1[] = { KC_L, KC_U, COMBO_END};
-const uint16_t PROGMEM combo2[] = { RU_GHE, RU_SHA, COMBO_END};
-const uint16_t PROGMEM combo3[] = { RU_SHA, RU_SHCH, COMBO_END};
-const uint16_t PROGMEM combo4[] = { KC_U, KC_Y, COMBO_END};
-const uint16_t PROGMEM combo5[] = { KC_M, KC_K, COMBO_END};
-const uint16_t PROGMEM combo6[] = { MT(MOD_RSFT, KC_N), KC_H, COMBO_END};
+const uint16_t PROGMEM combo0[] = { KC_U, KC_Y, COMBO_END};
+const uint16_t PROGMEM combo1[] = { KC_U, KC_Y, COMBO_END};
+const uint16_t PROGMEM combo2[] = { KC_M, KC_K, COMBO_END};
+const uint16_t PROGMEM combo3[] = { MT(MOD_RSFT, KC_N), KC_H, COMBO_END};
+const uint16_t PROGMEM combo4[] = { KC_L, KC_U, COMBO_END};
+const uint16_t PROGMEM combo5[] = { KC_B, KC_G, COMBO_END};
+const uint16_t PROGMEM combo6[] = { KC_G, KC_V, COMBO_END};
+const uint16_t PROGMEM combo7[] = { KC_P, MT(MOD_LSFT, KC_T), COMBO_END};
+const uint16_t PROGMEM combo8[] = { KC_W, MT(MOD_LALT, KC_R), COMBO_END};
+const uint16_t PROGMEM combo9[] = { KC_W, MT(MOD_LALT, KC_R), COMBO_END};
+const uint16_t PROGMEM combo10[] = { KC_C, MT(MOD_LCTL, KC_S), COMBO_END};
+const uint16_t PROGMEM combo11[] = { KC_F, MT(MOD_LCTL, KC_S), COMBO_END};
+const uint16_t PROGMEM combo12[] = { MT(MOD_LALT, KC_R), KC_X, COMBO_END};
+const uint16_t PROGMEM combo13[] = { KC_W, KC_F, COMBO_END};
+const uint16_t PROGMEM combo14[] = { KC_J, KC_M, COMBO_END};
+const uint16_t PROGMEM combo15[] = { KC_L, MT(MOD_RSFT, KC_N), COMBO_END};
+const uint16_t PROGMEM combo16[] = { KC_U, MT(MOD_RCTL, KC_E), COMBO_END};
+const uint16_t PROGMEM combo17[] = { MT(MOD_RCTL, KC_E), KC_COMMA, COMBO_END};
+const uint16_t PROGMEM combo18[] = { KC_Y, MT(MOD_LALT, KC_I), COMBO_END};
+const uint16_t PROGMEM combo19[] = { MT(MOD_LALT, KC_I), KC_DOT, COMBO_END};
+const uint16_t PROGMEM combo20[] = { MT(MOD_RSFT, KC_N), MT(MOD_RCTL, KC_E), COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
-    COMBO(combo0, TT(6)),
-    COMBO(combo1, KC_BSPC),
-    COMBO(combo2, KC_BSPC),
-    COMBO(combo3, KC_DELETE),
-    COMBO(combo4, KC_DELETE),
-    COMBO(combo5, KC_UNDS),
-    COMBO(combo6, KC_MINUS),
+    COMBO(combo0, KC_DELETE),
+    COMBO(combo1, KC_DELETE),
+    COMBO(combo2, KC_UNDS),
+    COMBO(combo3, KC_MINUS),
+    COMBO(combo4, KC_BSPC),
+    COMBO(combo5, KC_PERC),
+    COMBO(combo6, KC_TILD),
+    COMBO(combo7, KC_DLR),
+    COMBO(combo8, KC_AT),
+    COMBO(combo9, KC_HASH),
+    COMBO(combo10, KC_BSLS),
+    COMBO(combo11, KC_HASH),
+    COMBO(combo12, KC_GRAVE),
+    COMBO(combo13, KC_ESCAPE),
+    COMBO(combo14, KC_CIRC),
+    COMBO(combo15, KC_PLUS),
+    COMBO(combo16, KC_ASTR),
+    COMBO(combo17, KC_SLASH),
+    COMBO(combo18, KC_AMPR),
+    COMBO(combo19, KC_PIPE),
+    COMBO(combo20, KC_LABK),
 };
 
 
