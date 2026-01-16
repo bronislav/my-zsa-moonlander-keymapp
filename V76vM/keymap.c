@@ -80,6 +80,8 @@ const uint16_t PROGMEM combo1[] = { KC_L, KC_U, COMBO_END};
 const uint16_t PROGMEM combo2[] = { RU_GHE, RU_SHA, COMBO_END};
 const uint16_t PROGMEM combo3[] = { RU_SHA, RU_SHCH, COMBO_END};
 const uint16_t PROGMEM combo4[] = { KC_U, KC_Y, COMBO_END};
+const uint16_t PROGMEM combo5[] = { KC_M, KC_K, COMBO_END};
+const uint16_t PROGMEM combo6[] = { MT(MOD_RSFT, KC_N), KC_H, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo0, TT(6)),
@@ -87,6 +89,8 @@ combo_t key_combos[COMBO_COUNT] = {
     COMBO(combo2, KC_BSPC),
     COMBO(combo3, KC_DELETE),
     COMBO(combo4, KC_DELETE),
+    COMBO(combo5, KC_UNDS),
+    COMBO(combo6, KC_MINUS),
 };
 
 
