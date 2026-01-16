@@ -18,3 +18,5 @@
 
 #define RGB_MATRIX_STARTUP_SPD 60
 
+#define COMBO_ONLY_FROM_LAYER 0
+
