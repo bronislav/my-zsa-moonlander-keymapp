@@ -11,7 +11,7 @@
 #undef MOUSEKEY_TIME_TO_MAX
 #define MOUSEKEY_TIME_TO_MAX 100
 
-#define SERIAL_NUMBER "V76vM/nldwA0"
+#define SERIAL_NUMBER "V76vM/dPoV5N"
 #define LAYER_STATE_8BIT
 #define COMBO_COUNT 3
 #define HCS(report) host_consumer_send(record->event.pressed ? report : 0); return false
