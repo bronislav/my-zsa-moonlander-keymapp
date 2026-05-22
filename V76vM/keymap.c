@@ -170,6 +170,8 @@ bool rgb_matrix_indicators_user(void) {
   return true;
 }
 
+static bool cmd_latched = false;
+static uint16_t cmd_timer = 0;
 
 typedef struct {
     bool is_press_action;
