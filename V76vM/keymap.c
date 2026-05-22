@@ -302,55 +302,34 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         }
         return false;
 
-    case KC_F22:
+    case KC_F19:
         if (record->event.pressed) {
-          if (layer_state_is(0)) {
-            tap_code16(LGUI(LSFT(KC_2)));
-            layer_move(1);
-          } else {
-            tap_code16(LGUI(LSFT(KC_1)));
+          if (!layer_state_is(0)) {
             layer_move(0);
           }
+          tap_code16(KC_F19);
         }
         return false;
 
-    case KC_F23:
+    case KC_F20:
         if (record->event.pressed) {
-            if (!cmd_latched) {
-              register_mods(MOD_LGUI);
-              cmd_latched = true;
+          if (!layer_state_is(1)) {
+            layer_move(1);
           }
-          tap_code(KC_GRV);
-          cmd_timer = timer_read();
+
+          tap_code16(KC_F20);
         }
         return false;
 
-    case KC_F24:
+    case KC_F21:
         if (record->event.pressed) {
-          if (!cmd_latched) {
-            register_mods(MOD_LGUI);
-            cmd_latched = true;
+          if (!layer_state_is(1)) {
+            layer_move(1);
           }
-          tap_code(KC_TAB);
-          cmd_timer = timer_read();
+
+          tap_code16(KC_F21);
         }
         return false;
-
-    case KC_TAB:
-      if (record->event.pressed) {
-        if (cmd_latched) {
-          cmd_timer = timer_read();
-        }
-      }
-      return true;
-
-    case KC_GRV:
-      if (record->event.pressed) {
-        if (cmd_latched) {
-          cmd_timer = timer_read();
-        }
-      }
-      return true;
   }
   return true;
 }
