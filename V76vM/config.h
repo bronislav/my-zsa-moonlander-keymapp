@@ -1,4 +1,5 @@
 #define FLOW_TAP_TERM 100
+#define CHORDAL_HOLD
 #define RETRO_TAPPING
 
 #define PERMISSIVE_HOLD
@@ -11,9 +12,7 @@
 #undef MOUSEKEY_TIME_TO_MAX
 #define MOUSEKEY_TIME_TO_MAX 100
 
-#define AUTO_SHIFT_TIMEOUT 200
-#define NO_AUTO_SHIFT_NUMERIC
-#define SERIAL_NUMBER "V76vM/9DWX9N"
+#define SERIAL_NUMBER "V76vM/RjyRDN"
 #define LAYER_STATE_8BIT
 #define HCS(report) host_consumer_send(record->event.pressed ? report : 0); return false
 
