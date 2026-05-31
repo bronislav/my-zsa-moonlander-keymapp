@@ -293,6 +293,36 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             rgblight_mode(1);
         }
         return false;
+
+    case KC_F19:
+        if (record->event.pressed) {
+          if (!layer_state_is(0)) {
+            layer_move(0);
+          }
+          tap_code16(KC_F19);
+        }
+        return false;
+
+    case KC_F20:
+        if (record->event.pressed) {
+          if (!layer_state_is(1)) {
+            layer_move(1);
+          }
+
+          tap_code16(KC_F20);
+        }
+        return false;
+
+    case KC_F21:
+        if (record->event.pressed) {
+          if (!layer_state_is(1)) {
+            layer_move(1);
+          }
+
+          tap_code16(KC_F21);
+        }
+        return false;
+
   }
   return true;
 }
