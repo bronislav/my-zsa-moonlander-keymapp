@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,          KC_PERC,        KC_QUES,        KC_AMPR,        KC_ASTR,        KC_LCBR,        KC_NO,                                                                          KC_NO,          KC_RCBR,        KC_QUOTE,       KC_DQUO,        KC_PIPE,        KC_TILD,        KC_NO,          
     KC_NO,          KC_NO,          KC_CIRC,        KC_GRAVE,       KC_LPRN,        KC_LABK,                                        KC_RABK,        KC_RPRN,        KC_UNDS,        KC_BSLS,        KC_NO,          KC_NO,          
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                                                                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
-    MO(3),          KC_NO,          KC_NO,                          KC_NO,          KC_DELETE,      KC_TRANSPARENT
+    MO(3),          KC_ENTER,       KC_NO,                          KC_NO,          KC_DELETE,      KC_TRANSPARENT
   ),
   [2] = LAYOUT_moonlander(
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
@@ -44,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,          KC_PGDN,        KC_LEFT,        KC_DOWN,        KC_RIGHT,       KC_NO,          KC_NO,                                                                          KC_NO,          KC_KP_DOT,      KC_KP_4,        KC_KP_5,        KC_KP_6,        TD(DANCE_1),    KC_NO,          
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_KP_0,        KC_KP_1,        KC_KP_2,        KC_KP_3,        KC_EQUAL,       KC_NO,          
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_TRANSPARENT,                                                                                                 KC_TRANSPARENT, KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
-    KC_TRANSPARENT, KC_ENTER,       KC_TRANSPARENT,                 KC_TRANSPARENT, KC_NO,          MO(3)
+    KC_TRANSPARENT, KC_NO,          KC_TRANSPARENT,                 KC_TRANSPARENT, KC_DELETE,      MO(3)
   ),
   [3] = LAYOUT_moonlander(
     KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
